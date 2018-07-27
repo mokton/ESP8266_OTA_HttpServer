@@ -50,16 +50,6 @@ def firmware(board=None):
     else:
         pass
     
-#    if current_version:
-#        if current_version == '0.0.1':
-#            firmfile = 'esp8266_httpUpdate-0.0.2.bin'
-#        elif current_version == '0.0.2':
-#            firmfile = 'esp8266_httpUpdate-0.0.3.bin'
-#        elif current_version == '0.0.3':
-#            firmfile = ''
-#    else:
-#        firmfile = 'esp8266_httpUpdate-0.0.1.bin'
-        
     # 需要知道2个参数, 第1个参数是本地目录的path, 第2个参数是文件名(带扩展名)
     return send_from_directory(directory, firmfile, as_attachment=True)
     
@@ -93,5 +83,5 @@ def firmware_list(board=None):
     return render_template('esp8266fw.html', files = filelist, board = board)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=6051)
+    app.run(host='0.0.0.0', port=80)
 
